@@ -34,7 +34,7 @@ export class UserCreationComponent implements OnInit {
       this.userService.create(user).subscribe(value=>{
         if(value && value.data){
           this.options.keepAfterRouteChange=true;
-          this.alertService.success('usuario '+value.data.nombres+' creado con exito');
+          this.alertService.success('usuario '+value.data.nombres+' creado con exito', this.options);
           this.router.navigateByUrl('userList');
         }else{
         this.alertService.error(value.message,this.options);
